@@ -10,6 +10,7 @@ import About from 'App/Screens/About';
 
 // SharedComponents
 import GuidesList from 'App/Screens/GuidesList';
+import GuideView from 'App/Screens/GuideView';
 
 const makeNewStack = (routes, params) => {
   return createStackNavigator({
@@ -21,6 +22,9 @@ const TacticsStack = makeNewStack({
   TacticsMenu,
   TacticsGuidesList: {
     screen: GuidesList
+  },
+  TacticsGuideView: {
+    screen: GuideView
   }
 });
 const AboutStack = makeNewStack({ About });
