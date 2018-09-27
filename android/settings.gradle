@@ -1,0 +1,3 @@
+rootProject.name = 'WoWHelper'
+
+include ':app'

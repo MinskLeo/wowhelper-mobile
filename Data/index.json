@@ -1,0 +1,19 @@
+{
+  "tactics": [
+    {
+      "name": "Цитадель Ледяной Короны",
+      "image": "tactics_icecrown",
+      "guides": [
+        {
+          "name": "ЦЛК 10",
+          "content": [
+            { "blockType": "title", "content": "ЦЛК 10 Гайд" },
+            { "blockType": "image", "content": "tactics_0" },
+            { "blockType": "text", "content": "Немного regular текста гайда " },
+            { "blockType": "image", "content": "tactics_1" }
+          ]
+        }
+      ]
+    }
+  ]
+}
