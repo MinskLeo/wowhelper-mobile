@@ -13,6 +13,12 @@ import TextBlock from 'App/Components/GuideViewBlocks/TextBlock';
 import { tacticsImagesPack } from 'Data/importer';
 
 class GuideView extends React.Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: navigation.state.params.guide.name
+    }
+  }
+
   renderBlock = (blockData, index) => {
     switch (blockData.blockType) {
       case 'title':
