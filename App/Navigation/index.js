@@ -3,35 +3,28 @@ import {
   createDrawerNavigator,
   createStackNavigator
 } from 'react-navigation';
-import Header from 'App/Components/Header';
-
-import TacticsMenu from 'App/Screens/Tactics';
 import About from 'App/Screens/About';
+import Colors from 'App/Constants/Colors';
+import Fonts from 'App/Constants/Fonts';
 
 import TacticsCardList from 'App/Screens/TacticsStack/TacticsCardsList';
 import TacticsGuidesList from 'App/Screens/TacticsStack/TacticsGuidesList';
 import TacticsGuidePreview from 'App/Screens/TacticsStack/TacticsGuidePreview';
 import TacticsCategoryView from 'App/Screens/TacticsStack/TacticsCategoryView';
 
-// SharedComponents
-import GuidesList from 'App/Screens/GuidesList';
-import GuideView from 'App/Screens/GuideView';
-
 const makeNewStack = (routes, params) => {
   return createStackNavigator({
     ...routes
+  },{
+    navigationOptions: {
+      headerTintColor: Colors.darkBlue,
+      headerTitleStyle: {
+        fontFamily: Fonts.SegoeUISemibold,
+        fontWeight: '500'
+      },
+    }
   });
 }
-
-// const TacticsStack = makeNewStack({
-//   TacticsMenu,
-//   TacticsGuidesList: {
-//     screen: GuidesList
-//   },
-//   TacticsGuideView: {
-//     screen: GuideView
-//   }
-// });
 
 const TacticsStack = makeNewStack({
   TacticsCardList,

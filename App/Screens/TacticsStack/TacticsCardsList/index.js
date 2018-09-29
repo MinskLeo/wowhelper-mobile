@@ -6,7 +6,7 @@ import {
 import Card from 'App/Components/Card';
 import Colors from 'App/Constants/Colors';
 
-import DATABASE from 'Data/index_new.json';
+import DATABASE from 'Data/index.json';
 import { tacticsImagesPack } from 'Data/importer';
 
 class TacticsPage extends React.Component {

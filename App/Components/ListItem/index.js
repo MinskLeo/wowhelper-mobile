@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: 20
+    marginVertical: 5
   },
   button: {
     width: '100%',
-    paddingVertical: 10,
+    paddingVertical: 15,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',

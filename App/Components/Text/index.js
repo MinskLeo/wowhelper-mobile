@@ -4,6 +4,8 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import Fonts from 'App/Constants/Fonts';
+import Colors from 'App/Constants/Colors';
 
 type Props = {
   children: any,
@@ -22,6 +24,9 @@ export default TextCustom;
 
 const styles = StyleSheet.create({
   content: {
-    fontSize: 18
+    fontSize: 20,
+    color: Colors.textBlack,
+    fontWeight: '400',
+    fontFamily: Fonts.SegoeUI
   }
 });

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     color: Colors.textBlack,
     fontWeight: 'bold',
     width: '100%',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   separator: {
     width: '90%',
     height: 1,
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray,
     marginVertical: 35
   },
   overviewImage: {
@@ -78,14 +78,14 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   overviewText: {
-    fontSize: 16,
+    fontSize: 18,
     color: Colors.textBlack,
     width: '90%',
     textAlign: 'left',
     marginVertical: 15
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 22,
     color: Colors.textBlack,
     width: '100%',
     textAlign: 'center',
