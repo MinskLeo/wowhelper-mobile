@@ -61,12 +61,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: '100%',
     textAlign: 'left',
-    paddingLeft: 20,
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333'
-    // bottom: 25,
-    // left: 5,
+    paddingLeft: 20
   },
   titleContainer: {
     width: '100%',

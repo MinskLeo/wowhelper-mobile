@@ -8,7 +8,12 @@ const colors = {
   orange: '#FF7D0A',
   purple: '#8787ED',
   white: '#FFFFFF',
-  gray: '#BDBDBD'
+  gray: '#BDBDBD',
+  black: '#000',
+
+  textBlack: '#000',
+  textWhite: '#eee',
+  textGray: ''
 }
 
 export default colors;
