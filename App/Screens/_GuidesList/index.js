@@ -18,12 +18,13 @@ class GuidesList extends React.Component {
   }
 
   render () {
-    const { guides } = this.props.navigation.state.params;
+    const { navigation } = this.props;
+    const { guides } = navigation.state.params;
 
     return (
       <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
         {guides.map( (item, index) => {
-          return <ListItem key={index} onPress={()=>alert('clicked!')}>{item.name}</ListItem>
+          return <ListItem key={index} onPress={() => navigation.navigate('TacticsGuideView', { guide: item })}>{item.name}</ListItem>
         })}
       </ScrollView>
     );

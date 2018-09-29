@@ -7,9 +7,12 @@ import {
 import Text from 'App/Components/Text';
 import Colors from 'App/Constants/Colors';
 import TouchableComponent from 'App/Components/TouchableComponent';
-// import Icon from 'react-native-vector-icons/FontAwesome';
 
 class About extends React.Component<Props> {
+  static navigationOptions = {
+    title: 'О программе',
+  }
+
   render() {
     return (
       <View style={styles.wrapper}>
@@ -23,18 +26,9 @@ class About extends React.Component<Props> {
           <Text>и т.п.</Text>
         </Text>
         <Text style={styles.text}>
-          <Text>Создана членом гильдии Feikelol   </Text>
+          <Text style={styles.text}>Создана членом гильдии Feikelol   </Text>
           <Text style={styles.textLineThrough}>за 10 000 еп</Text>
         </Text>
-        {/* <View>
-          <TouchableComponent
-            type='android'
-            style={styles.button}
-            onPress={this.onVkClick}
-          >
-            <Icon name="vk" style={styles.vk} />
-          </TouchableComponent>
-        </View> */}
       </View>
     );
   }
@@ -50,15 +44,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 35,
-    backgroundColor: '#eee'
+    backgroundColor: Colors.white
   },
   textLogo: {
-    fontSize: 35,
+    fontSize: 32,
     marginVertical: 20
   },
   text: {
     marginVertical: 5,
-    maxWidth: 310
+    maxWidth: 310,
+    fontSize: 18
   },
   textLineThrough: {
     textDecorationLine: 'line-through'
@@ -80,7 +75,6 @@ const styles = StyleSheet.create({
     borderRightColor: Colors.blue,
     borderRightWidth: 1,
     marginTop: 20
-    // backgroundColor: Colors.blue
   },
   vk: {
     fontSize: 50,

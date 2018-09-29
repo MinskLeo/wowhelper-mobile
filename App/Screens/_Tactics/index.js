@@ -1,14 +1,14 @@
 import * as React from 'react';
 import {
   ScrollView,
-  View,
   StyleSheet
 } from 'react-native';
-import Text from 'App/Components/Text';
 import Card from 'App/Components/Card';
 
 import DATABASE from 'Data/index.json';
 import { tacticsImagesPack } from 'Data/importer';
+
+// TacticsCardsList => TacticsGuidesList => TacticsGuidePreview => TacticsCategoryView
 
 class TacticsPage extends React.Component {
   static navigationOptions = {
