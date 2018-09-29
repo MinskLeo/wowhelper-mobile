@@ -22,8 +22,6 @@ class GuidePreview extends React.PureComponent<Props> {
 
     return (
       <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
-        <Text style={styles.title}>{guide.name}</Text>
-        <View style={styles.separator} />
         <Image style={styles.overviewImage} source={imagesDatabase[guide.overviewImage]} />
         <Text style={styles.overviewText}>{guide.overviewText}</Text>
         <View style={styles.separator} />
@@ -54,14 +52,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.white
   },
-  title: {
-    fontSize: 22,
-    color: Colors.textBlack,
-    fontWeight: 'bold',
-    width: '100%',
-    textAlign: 'center',
-    marginTop: 15
-  },
   separator: {
     width: '90%',
     height: 1,
@@ -75,7 +65,8 @@ const styles = StyleSheet.create({
     maxHeight: 200,
     borderWidth: 3,
     borderColor: Colors.gray,
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 10
   },
   overviewText: {
     fontSize: 18,

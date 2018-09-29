@@ -5,13 +5,17 @@ import {
 } from 'react-native';
 import Card from 'App/Components/Card';
 import Colors from 'App/Constants/Colors';
+import HeaderBars from 'App/Components/HeaderBars';
 
 import DATABASE from 'Data/index.json';
 import { tacticsImagesPack } from 'Data/importer';
 
 class TacticsPage extends React.Component {
-  static navigationOptions = {
-    title: 'Рейды',
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: 'Рейды',
+      headerLeft: <HeaderBars onPress={() => navigation.toggleDrawer()} />
+    }
   }
 
 
