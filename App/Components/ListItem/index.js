@@ -3,6 +3,7 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import Colors from 'App/Constants/Colors';
 import Text from 'App/Components/Text';
 import TouchableComponent from 'App/Components/TouchableComponent';
 
@@ -25,6 +26,7 @@ class ListItem  extends React.PureComponent<Props> {
         </TouchableComponent>
         <View style={styles.separator} />
       </View>
+        
       
     );
   }
@@ -43,20 +45,22 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    paddingVertical: 20,
-    flexDirection: 'column',
-    justifyContent: 'center',
+    paddingVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    backgroundColor: Colors.blue,
   },
   content: {
     width: '100%',
     fontSize: 20,
     paddingLeft: 10,
-    textAlign: 'left'
+    textAlign: 'left',
+    color: Colors.textWhite
   },
   separator: {
     width: '100%',
     height: 1,
-    backgroundColor: '#333'
+    backgroundColor: Colors.white
   }
 });
