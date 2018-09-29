@@ -1,10 +1,12 @@
 import * as React from 'react';
 import {
   ScrollView,
-  StyleSheet
+  StyleSheet,
+  View
 } from 'react-native';
 import ListItem from 'App/Components/ListItem';
 import Colors from 'App/Constants/Colors';
+import NoContent from 'App/Components/NoContent';
 
 class TacticsPage extends React.Component {
   static navigationOptions = {
@@ -16,16 +18,21 @@ class TacticsPage extends React.Component {
     const { navigation } = this.props;
     const { guides } = navigation.state.params;
 
-    return (
-      <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
-        {guides.map((item, index) => {
-          return <ListItem
-            key={index}
-            onPress={() => navigation.navigate('TacticsGuidePreview', { guide: item })}
-          >{item.name}</ListItem>
-        })}
-      </ScrollView>
-    );
+    if(guides.length > 0) {
+      return (
+        <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
+          {guides.length > 0 && guides.map((item, index) => {
+            return <ListItem
+              key={index}
+              onPress={() => navigation.navigate('TacticsGuidePreview', { guide: item })}
+            >{item.name}</ListItem>
+          })}
+          {guides.length <= 0 && <NoContent />}
+        </ScrollView>
+      );
+    }
+
+    return <View style={styles.wrapper}><NoContent /></View>;
   }
 }
 

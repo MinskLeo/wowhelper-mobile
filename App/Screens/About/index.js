@@ -21,8 +21,8 @@ class About extends React.Component<Props> {
     return (
       <View style={styles.wrapper}>
         <StatusBar backgroundColor={Colors.darkBlue} />
-        <Text style={styles.textLogo}>{`<EpicMuffins />`}</Text>
-        <Text style={styles.text}>Данная программа была разработана с целью более простого о комфортного изучения тактик</Text>
+        <Text style={styles.textLogo}>{`<EpicMuffins/>`}</Text>
+        <Text style={styles.text}>Данная программа была разработана с целью более простого и комфортного изучения тактик</Text>
         <Text style={styles.text}>
           <Text style={{ color: Colors.blue }}>ЦЛК, </Text>
           <Text style={{ color: Colors.red }}>РС, </Text>
@@ -31,7 +31,7 @@ class About extends React.Component<Props> {
         </Text>
         <Text style={styles.text}>
           <Text style={styles.text}>Создана членом гильдии Feikelol   </Text>
-          <Text style={styles.textLineThrough}>за 10 000 еп</Text>
+          <Text style={styles.textLineThrough}>за 20 000 еп</Text>
         </Text>
       </View>
     );
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   text: {
     marginVertical: 5,
-    maxWidth: 310,
+    maxWidth: '90%',
     fontSize: 18
   },
   textLineThrough: {
