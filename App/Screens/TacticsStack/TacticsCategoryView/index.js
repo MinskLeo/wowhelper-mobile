@@ -7,10 +7,11 @@ import CategoryView from 'App/Components/CategoryView';
 import { tacticsImagesPack } from 'Data/importer';
 
 class TacticsGuidePreview extends React.Component {
-  static navigationOptions = {
-    title: 'View',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.state.params.category.name,
+    }
   }
-
 
   render() {
     const { category } = this.props.navigation.state.params;

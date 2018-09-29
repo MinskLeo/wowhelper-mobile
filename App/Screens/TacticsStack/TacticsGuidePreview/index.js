@@ -7,8 +7,10 @@ import GuidePreview from 'App/Components/GuidePreview';
 import { tacticsImagesPack } from 'Data/importer';
 
 class TacticsGuidePreview extends React.Component {
-  static navigationOptions = {
-    title: 'Preview',
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: navigation.state.params.guide.name,
+    }
   }
 
   onCategoryPress = (category, index) => {

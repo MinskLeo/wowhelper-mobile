@@ -5,6 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 import Text from 'App/Components/Text';
+import Colors from 'App/Constants/Colors';
 
 type Props = {
   children: string
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     width: '100%',
     fontSize: 18,
     textAlign: 'left',
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+    color: Colors.lightBlack
   }
 });

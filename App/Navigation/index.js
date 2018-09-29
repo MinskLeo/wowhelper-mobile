@@ -3,6 +3,7 @@ import {
   createDrawerNavigator,
   createStackNavigator
 } from 'react-navigation';
+
 import About from 'App/Screens/About';
 import Colors from 'App/Constants/Colors';
 import Fonts from 'App/Constants/Fonts';
@@ -21,8 +22,9 @@ const makeNewStack = (routes, params) => {
       headerTitleStyle: {
         fontFamily: Fonts.SegoeUISemibold,
         fontWeight: '500'
-      },
-    }
+      }
+    },
+    ...params
   });
 }
 
