@@ -1,10 +1,13 @@
 import * as React from 'react';
 import {
   ScrollView,
-  StyleSheet
+  StyleSheet,
+  View
 } from 'react-native';
 import Card from 'App/Components/Card';
 import Colors from 'App/Constants/Colors';
+import Text from 'App/Components/Text';
+import NoContent from 'App/Components/NoContent';
 
 import DATABASE from 'Data/index.json';
 import { tacticsImagesPack } from 'Data/importer';
@@ -19,18 +22,22 @@ class TacticsPage extends React.Component {
     const { tactics } = DATABASE;
     const { navigation } = this.props;
 
-    return (
-      <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
-        {tactics.map((item, index) => {
-          return <Card
-            key={index}
-            img={tacticsImagesPack[item.image]}
-            title={item.name}
-            onPress={() => navigation.navigate('TacticsGuidesList', { guides: item.guides })}
-          />
-        })}
-      </ScrollView>
-    );
+    if (tactics.length > 0) {
+      return (
+        <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
+          {tactics.map((item, index) => {
+            return <Card
+              key={index}
+              img={tacticsImagesPack[item.image]}
+              title={item.name}
+              onPress={() => navigation.navigate('TacticsGuidesList', { guides: item.guides })}
+            />
+          })}
+        </ScrollView>
+      );
+    }
+
+    return <View style={styles.wrapper}><NoContent /></View>;
   }
 }
 
