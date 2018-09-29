@@ -7,10 +7,14 @@ import {
 import Text from 'App/Components/Text';
 import Colors from 'App/Constants/Colors';
 import TouchableComponent from 'App/Components/TouchableComponent';
+import HeaderBars from 'App/Components/HeaderBars';
 
 class About extends React.Component<Props> {
-  static navigationOptions = {
-    title: 'О программе',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'О программе',
+      headerLeft: <HeaderBars onPress={() => navigation.toggleDrawer()} />
+    }
   }
 
   render() {
@@ -48,7 +52,8 @@ const styles = StyleSheet.create({
   },
   textLogo: {
     fontSize: 32,
-    marginVertical: 20
+    marginVertical: 20,
+    color: Colors.blue
   },
   text: {
     marginVertical: 5,
