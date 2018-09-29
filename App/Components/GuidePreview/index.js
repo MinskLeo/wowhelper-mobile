@@ -30,7 +30,7 @@ class GuidePreview extends React.PureComponent<Props> {
         <Text style={styles.subtitle}>Категории</Text>
         {guide.categories.map( (item, index) => {
           return <ListItem key={index} onPress={() => {
-              alert(`clicked! ${item}`);
+              console.log('item: ', item)
               onCategoryPress(item, index)
             }}>{item.name}</ListItem>
         })}
@@ -44,7 +44,7 @@ export default GuidePreview;
 const styles = StyleSheet.create({
   wrapper: {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   wrapperContent: {
     paddingVertical: 15,
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
   overviewImage: {
     width: '100%',
     maxWidth: '100%',
+    height: 200,
     maxHeight: 200,
     borderWidth: 3,
     borderColor: Colors.gray,
@@ -88,5 +89,6 @@ const styles = StyleSheet.create({
     color: Colors.textBlack,
     width: '100%',
     textAlign: 'center',
+    marginBottom: 25
   }
 });

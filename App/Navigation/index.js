@@ -36,7 +36,8 @@ const makeNewStack = (routes, params) => {
 const TacticsStack = makeNewStack({
   TacticsCardList,
   TacticsGuidesList,
-  TacticsGuidePreview
+  TacticsGuidePreview,
+  TacticsCategoryView
 });
 const AboutStack = makeNewStack({ About });
 

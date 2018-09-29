@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20
+    // marginTop: 20
   },
   button: {
     width: '100%',
