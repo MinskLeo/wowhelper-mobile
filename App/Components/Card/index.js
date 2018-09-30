@@ -11,16 +11,26 @@ import TouchableComponent from 'App/Components/TouchableComponent';
 type Props = {
   img: string | Object,
   title: string,
+  backgroundColor?: string,
+  imageResizeMode?: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch',
   onPress: () => void
 }
 
 class Card extends React.PureComponent<Props> {
   render() {
-    const { img, title, onPress } = this.props;
+    const { img, title, onPress, backgroundColor, imageResizeMode } = this.props;
     let source = img;
     if (typeof img === 'string') {
       source = { uri: img }
     }
+
+    const stylesImageContainer = {
+      backgroundColor
+    }
+    const stylesImage = {
+      resizeMode: imageResizeMode
+    }
+
 
     return (
       <TouchableComponent
@@ -28,8 +38,8 @@ class Card extends React.PureComponent<Props> {
         style={styles.wrapper}
         onPress={onPress}
       >
-        <View style={styles.imageContainer}>
-          <Image style={styles.image} source={source} />
+        <View style={[styles.imageContainer, stylesImageContainer]}>
+          <Image style={[styles.image, stylesImage]} source={source} />
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{title}</Text>

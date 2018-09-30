@@ -8,10 +8,18 @@ import About from 'App/Screens/About';
 import Colors from 'App/Constants/Colors';
 import Fonts from 'App/Constants/Fonts';
 
+// Tactics Stack
 import TacticsCardList from 'App/Screens/TacticsStack/TacticsCardsList';
 import TacticsGuidesList from 'App/Screens/TacticsStack/TacticsGuidesList';
 import TacticsGuidePreview from 'App/Screens/TacticsStack/TacticsGuidePreview';
 import TacticsCategoryView from 'App/Screens/TacticsStack/TacticsCategoryView';
+
+// Class Guides Stack
+import ClassGuidesCardsList from 'App/Screens/ClassGuidesStack/ClassGuidesCardsList';
+import ClassGuidesGuidesList from 'App/Screens/ClassGuidesStack/ClassGuidesGuidesList';
+import ClassGuidesGuidePreview from 'App/Screens/ClassGuidesStack/ClassGuidesGuidePreview';
+import ClassGuidesCategoryView from 'App/Screens/ClassGuidesStack/ClassGuidesCategoryView';
+
 
 const makeNewStack = (routes, params) => {
   return createStackNavigator({
@@ -34,6 +42,12 @@ const TacticsStack = makeNewStack({
   TacticsGuidePreview,
   TacticsCategoryView
 });
+const ClassGuidesStack = makeNewStack({
+  ClassGuidesCardsList,
+  ClassGuidesGuidesList,
+  ClassGuidesGuidePreview,
+  ClassGuidesCategoryView
+});
 const AboutStack = makeNewStack({ About });
 
 const Router = createDrawerNavigator({
@@ -41,6 +55,12 @@ const Router = createDrawerNavigator({
     screen: TacticsStack,
     navigationOptions: {
       drawerLabel: 'Тактики'
+    }
+  },
+  ClassGuides: {
+    screen: ClassGuidesStack,
+    navigationOptions: {
+      drawerLabel: 'Классовые гайды'
     }
   },
   About: {

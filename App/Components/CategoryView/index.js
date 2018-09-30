@@ -15,8 +15,6 @@ type Props = {
   imagesDatabase: Object
 }
 
-import { tacticsImagesPack } from 'Data/importer';
-
 class CategoryView extends React.Component<Props> {
   renderBlock = (blockData, index) => {
     switch (blockData.blockType) {
@@ -27,7 +25,7 @@ class CategoryView extends React.Component<Props> {
         return <TitleBlock subtitle key={index}>{blockData.content}</TitleBlock>;
 
       case 'image':
-        return <ImageBlock key={index} img={tacticsImagesPack[blockData.content]} />;
+        return <ImageBlock key={index} img={this.props.imagesDatabase[blockData.content]} />;
 
       case 'text':
         return <TextBlock key={index}>{blockData.content}</TextBlock>;

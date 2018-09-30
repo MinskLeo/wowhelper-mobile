@@ -4,37 +4,41 @@ import {
   StyleSheet,
   View
 } from 'react-native';
+import ClassListItem from 'App/Components/ClassListItem';
 import Card from 'App/Components/Card';
+
 import Colors from 'App/Constants/Colors';
 import Text from 'App/Components/Text';
 import NoContent from 'App/Components/NoContent';
 import HeaderBars from 'App/Components/HeaderBars';
 
 import DATABASE from 'Data/index.json';
-import { tacticsImagesPack } from 'Data/importer';
+import { classImagesPack } from 'Data/importer';
 
-class TacticsPage extends React.Component {
-  static navigationOptions = ({navigation}) => {
+
+class ClassGuidesList extends React.Component {
+  static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Рейды',
+      title: 'Классовые гайды',
       headerLeft: <HeaderBars onPress={() => navigation.toggleDrawer()} />
     }
   }
 
 
   render() {
-    const { tactics } = DATABASE;
+    const { classGuides } = DATABASE;
     const { navigation } = this.props;
 
-    if (Array.isArray(tactics) && tactics.length > 0) {
+    if (Array.isArray(classGuides) && classGuides.length > 0) {
       return (
         <ScrollView style={styles.wrapper} contentContainerStyle={styles.wrapperContent}>
-          {tactics.map((item, index) => {
+          {classGuides.map((item, index) => {
             return <Card
               key={index}
-              img={tacticsImagesPack[item.image]}
+              img={classImagesPack[item.image]}
               title={item.name}
-              onPress={() => navigation.navigate('TacticsGuidesList', { guides: item.guides })}
+              imageResizeMode='contain'
+              onPress={() => navigation.navigate('ClassGuidesGuidesList', { guides: item.guides })}
             />
           })}
         </ScrollView>
@@ -45,7 +49,7 @@ class TacticsPage extends React.Component {
   }
 }
 
-export default TacticsPage;
+export default ClassGuidesList;
 
 const styles = StyleSheet.create({
   wrapper: {

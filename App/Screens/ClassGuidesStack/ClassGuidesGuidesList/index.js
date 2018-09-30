@@ -8,7 +8,7 @@ import ListItem from 'App/Components/ListItem';
 import Colors from 'App/Constants/Colors';
 import NoContent from 'App/Components/NoContent';
 
-class TacticsPage extends React.Component {
+class ClassGuidesGuidesList extends React.Component {
   static navigationOptions = {
     title: 'Список гайдов',
   }
@@ -24,7 +24,7 @@ class TacticsPage extends React.Component {
           {guides.map((item, index) => {
             return <ListItem
               key={index}
-              onPress={() => navigation.navigate('TacticsGuidePreview', { guide: item })}
+              onPress={() => navigation.navigate('ClassGuidesGuidePreview', { guide: item })}
             >{item.name}</ListItem>
           })}
           {guides.length <= 0 && <NoContent />}
@@ -36,7 +36,7 @@ class TacticsPage extends React.Component {
   }
 }
 
-export default TacticsPage;
+export default ClassGuidesGuidesList;
 
 const styles = StyleSheet.create({
   wrapper: {
